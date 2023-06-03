@@ -23,4 +23,5 @@ func Execute(problemID int, params Params) error {
 var problemList = []problemFunc{
 	nil, // No problem zero
 	problem001,
+	problem002,
 }
