@@ -24,4 +24,5 @@ var problemList = []problemFunc{
 	nil, // No problem zero
 	problem001,
 	problem002,
+	problem003,
 }
