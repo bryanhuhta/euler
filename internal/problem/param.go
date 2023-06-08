@@ -2,6 +2,8 @@ package problem
 
 import (
 	"fmt"
+	"os"
+	"path"
 	"strconv"
 )
 
@@ -34,4 +36,21 @@ func (p Params) getInt(key string) (int, error) {
 	}
 
 	return n, nil
+}
+
+func (p Params) getFileText(key string) (string, error) {
+	const basePath = "data"
+
+	val, ok := p[key]
+	if !ok {
+		return "", fmt.Errorf("no such key: %s", key)
+	}
+
+	filepath := path.Join(basePath, val)
+	bytes, err := os.ReadFile(filepath)
+	if err != nil {
+		return "", err
+	}
+
+	return string(bytes), nil
 }

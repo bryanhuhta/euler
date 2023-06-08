@@ -32,4 +32,5 @@ var problemList = []problemFunc{
 	problem008,
 	problem009,
 	problem010,
+	problem011,
 }
