@@ -20,6 +20,17 @@ func Execute(problemID int, params Params) error {
 	return nil
 }
 
+func unimplemented(problemNo int) problemFunc {
+	return func(params Params) (interface{}, error) {
+		err := fmt.Errorf(
+			"Problem %d is unimplemented. Try solve it here: https://projecteuler.net/problem=%d",
+			problemNo,
+			problemNo,
+		)
+		return nil, err
+	}
+}
+
 var problemList = []problemFunc{
 	nil, // No problem zero
 	problem001,
@@ -34,4 +45,11 @@ var problemList = []problemFunc{
 	problem010,
 	problem011,
 	problem012,
+	unimplemented(13),
+	unimplemented(14),
+	unimplemented(15),
+	unimplemented(16),
+	unimplemented(17),
+	unimplemented(18),
+	problem019,
 }
