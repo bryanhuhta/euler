@@ -52,4 +52,5 @@ var problemList = []problemFunc{
 	unimplemented(17),
 	unimplemented(18),
 	problem019,
+	problem020,
 }
